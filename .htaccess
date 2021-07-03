@@ -4,7 +4,7 @@
     RewriteCond %{REQUEST_URI} !-d
     RewriteCond %{REQUEST_URI} !-L
     # l = last
-    RewriteRule ^(css|vendors|vendor|js|img)($|/) - [L]
+    RewriteRule ^(assets|vendors|vendor)($|/) - [L]
     RewriteRule ^(autorunGen.php|autoload.php|index.php)($|/) - [L]
 
     RewriteRule ^(.*)$ index.php?req=$1 [L,QSA]

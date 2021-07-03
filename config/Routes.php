@@ -9,10 +9,6 @@ $route->setDefaultValues('Home','index');   // if controller or action is empty 
 
 $route->fetch();
 
-
-
-
-
 try {
     $route->callObjectEx('App\Controller\{controller}Controller');
 } catch (\Exception $e) {

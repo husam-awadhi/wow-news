@@ -2,15 +2,31 @@
 <html>
     <head>
         {% block head %}
-            <link rel="stylesheet" href="style.css"/>
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+            <link rel="stylesheet" href="assets/css/app.css"/>
+            <link rel="stylesheet" href="assets/css/all.min.css"/>
+            <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
             <title>{% block title %}{% endblock %} - WOW News</title>
         {% endblock %}
     </head>
     <body>
-        <div id="content">{% block content %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-                &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
-            {% endblock %}
-        </div>
+    <div class="container">
+        <div class="row">
+                {% include 'navbar.twig' %}
+        </div> {# row #}
+        <div class="row space">
+            <div class="col-xs-6 col-md-4">
+                {% include 'sidebar.twig' %}
+            </div> {# sidebar.col #}
+            <div class="col-md-12 col-lg-8">
+                {% block content %}{% endblock %}
+            </div> {# content #}
+            <div class="footer" id="footer">
+                {% block footer %}
+                    &copy; Copyright 2021 | <a href="https://github.com/husam-awadhi">Husam Awadhi</a>
+                {% endblock %}
+            </div> {# footer #}
+        </div> {# row #}
+    </div> {# container #}
+    </body>
 </html>

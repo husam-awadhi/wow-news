@@ -10,6 +10,6 @@ class HomeController extends AbstractController
 {
     public function indexAction($id = "", $idparent = "", $event = "")
     {
-        echo $id . 'Hi';
+        $this->render('home/home.twig');
     }
 }
