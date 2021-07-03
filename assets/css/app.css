@@ -1,12 +1,14 @@
 #sidebar {
-    width: 250px;
+    width: auto;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: auto;
     z-index: 999;
     padding: 16px;
-    background: #6c757d;
-    color: rgba(255, 255, 255, .55);
+    border-style: solid;
+    border-width: thin;
+    border-radius: 8px;
+    border-color: #f8f9fa;
     transition: all 0.3s;
 }
 

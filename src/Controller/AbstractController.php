@@ -5,10 +5,14 @@ namespace App\Controller;
 use App\Config;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
+use App\Model\Model;
+use Exception;
 
 abstract class AbstractController
 {
-    protected $twig;
+    protected Environment $twig;
+    protected $model;
+    protected string $template = '';
 
     public function __construct()
     {
@@ -25,8 +29,9 @@ abstract class AbstractController
         ]);
     }
 
-    protected function render(string $directory = '',array $context = [])
+    protected function render(array $context = [])
     {
-        echo $this->twig->load($directory)->render($context);
+        if (!$this->template) throw new Exception('Twig template is not set.');
+        echo $this->twig->load($this->template)->render($context);
     }
 }
