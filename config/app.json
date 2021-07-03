@@ -1,0 +1,16 @@
+{
+    "name": "husam-awadhi/news-web",
+    "type": "project",
+    "description": "News Portal",
+    "config": {
+        "prod": false,
+        "debug": true,
+        "log": true,
+        "db": {
+            "name": "",
+            "password": "",
+            "options": ""
+        },
+        "other_option": "value"
+    }
+}

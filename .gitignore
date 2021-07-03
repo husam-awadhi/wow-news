@@ -1,0 +1,81 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/linux,composer,phpunit,symfony
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,composer,phpunit,symfony
+
+### Composer ###
+composer.phar
+/vendor/
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+### Symfony ###
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitignore
+!app/logs/.gitignore
+
+# Email spool folder
+/app/spool/*
+
+# Cache, session files and logs (Symfony)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+!var/cache/.gitignore
+!var/logs/.gitignore
+!var/sessions/.gitignore
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+
+# PHPUnit
+
+# Build data
+
+# Composer PHAR
+/composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+# Embedded web-server pid file
+/.web-server-pid
+
+### Symfony Patch ###
+/web/css/
+/web/js/
+
+# End of https://www.toptal.com/developers/gitignore/api/linux,composer,phpunit,symfony
