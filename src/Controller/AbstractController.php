@@ -7,6 +7,8 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use App\Model\Model;
 use Exception;
+use Symfony\Bridge\Twig\Extension\AssetExtension;
+use Symfony\Component\Asset\Package;
 
 abstract class AbstractController
 {
@@ -23,10 +25,16 @@ abstract class AbstractController
     {
         $loader = new FilesystemLoader(ROOT . '/views');
 
-        return new Environment($loader, [
+        $twig = new Environment($loader, [
             'cache' => CACHE,
             'debug' => Config::getValue('debug'),
+            'url_base_path' => ROOT.'/assets',
         ]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
+        $twig->addGlobal('home', basename(ROOT));
+        $twig->addGlobal('assets', basename(ROOT).'/assets');
+
+        return $twig;
     }
 
     protected function render(array $context = [])

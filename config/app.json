@@ -7,9 +7,11 @@
         "debug": true,
         "log": true,
         "db": {
-            "name": "",
-            "password": "",
-            "options": ""
+            "host": "127.0.0.1",
+            "name": "news_db",
+            "user": "root",
+            "password": "root",
+            "charset": "utf8"
         },
         "other_option": "value"
     }

@@ -6,6 +6,8 @@
         "php": ">=7.4.15",
         "eftec/routeone": "1.*",
         "monolog/monolog": "^2.2",
+        "symfony/asset": "^5.3",
+        "symfony/twig-bridge": "^5.3",
         "twig/twig": "^3.0"
     },
     "config": {
@@ -24,5 +26,9 @@
         "psr-4": {
             "App\\Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3",
+        "tebazil/db-seeder": "^0.0.0"
     }
 }
