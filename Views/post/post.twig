@@ -1,0 +1,40 @@
+{% extends "app.twig" %}
+
+{% block title %}
+	{{post.title}}
+{% endblock %}
+
+{% block head %}
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="/{{home}}">Home</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">{{ post.title|slice(0, 15) ~ '...'}}</li>
+			</ol>
+		</nav>
+	</div>
+	<div class="row">
+		<h1>
+			<span class="badge bg-warning text-dark">{{post.type}}</span>
+			{{post.title}}
+		</h1>
+	</div>
+	<div class="row">
+		<p>By
+			{{post.created_by ~ ' | ' ~ post.created}}</p>
+	</div>
+	<div class="row row-cols-1 row-cols-md-2">
+		<div class="col order-md-2">
+			<img src="{{post.image}}" class="img-fluid rounded float-left" alt="{{post.title}}">
+		</div>
+		<div class="col order-md-1">
+			<p>{{post.article}}</p>
+		</div>
+	</div>
+{% endblock %}

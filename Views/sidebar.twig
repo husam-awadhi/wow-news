@@ -1,16 +1,25 @@
 {% block sidebar %}
-<nav class="nav flex-column" id="sidebar">
-  <a class="nav-link active" aria-current="page" href="#">Home</a>
-  <a class="nav-link" href="#">Trending</a>
-  <a class="nav-link" href="#">#linux</a>
-  <a class="nav-link" href="#">#android</a>
-  <a class="nav-link" href="#">...</a>
-  <a class="nav-link" href="#">u get it</a>
-  <div style="display: inline;">
-    <a href="https://www.linkedin.com/in/husam-awadhi/"><i class="fab fa-linkedin"></i></a> 
-    <a href="https://www.linkedin.com/in/husam-awadhi/"><i class="fab fa-linkedin"></i></a> 
-    <a href="https://www.linkedin.com/in/husam-awadhi/"><i class="fab fa-linkedin"></i></a> 
-    <a href="https://www.linkedin.com/in/husam-awadhi/"><i class="fab fa-linkedin"></i></a> 
-  </div>
-</nav>{# sidebar #}
+	<nav class="nav flex-column" id="sidebar">
+		<a class="nav-link" aria-current="page" href="/{{home}}">Home</a>
+		<a class="nav-link" href="#">Trending</a>
+		<a class="nav-link" href="#">#linux</a>
+		<a class="nav-link" href="#">#android</a>
+		<a class="nav-link" href="#">...</a>
+		<a class="nav-link" href="#">u get it</a>
+		<div class="d-flex justify-content-center social-handlers">
+			<a href="https://www.linkedin.com/in/husam-awadhi/">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/husam-awadhi/">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/husam-awadhi/">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/husam-awadhi/">
+				<i class="fab fa-linkedin"></i>
+			</a>
+		</div>
+	</nav>
+	{# sidebar #}
 {% endblock %}

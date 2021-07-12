@@ -19,7 +19,7 @@ svg {
     margin-top: -100px;
     margin-left: 50px;
     color: #FFF;
-    font-family: Roboto;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 300;
 }
 
