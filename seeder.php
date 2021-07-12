@@ -33,12 +33,11 @@ require ROOT . '/vendor/autoload.php';
 
 use App\DB;
 use App\Helpers;
-use \Exception;
 use tebazil\dbseeder\Seeder;
 
 try {
     $db = DB::getConnection();
-} catch (Exception $e) {
+} catch (\Exception $e) {
     Helpers::log("seeder error - {$e->getMessage()}");
 }
 
@@ -47,15 +46,16 @@ $generator = $seeder->getGeneratorConfigurator();
 $faker = $generator->getFakerConfigurator();
 
 $seeder->table('posts')->columns([
-    'title' => $faker->text,
-    'article' => $faker->paragraph,
-    'synopsis' => $faker->text,
+    'title' => $faker->sentence,
+    'article' => $faker->paragraph(80, true),
+    'synopsis' => $faker->paragraph,
     'type' => $faker->randomElement(['news', 'trending', 'breaking']),
-    'image' => $faker->url,
+    // 'image' => $faker->url,
+    'image' => 'https://dummyimage.com/650x400/d1d1d1/ffffff&text=an+interesting+img',
     // 'show' => $faker->boolean($chanceOfGettingTrue = 80),
     'created_by' => $faker->firstName,
     // 'created' => $faker->dateTimeThisCentury($max = 'now', $timezone = null),
     // 'updated' => $faker->dateTimeThisCentury($max = 'now', $timezone = null),
-])->rowQuantity(20);
+])->rowQuantity(21);
 
 $seeder->refill();
