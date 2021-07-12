@@ -7,6 +7,8 @@ use App\DB;
 class Model
 {
 
+    protected $defaultWhere = '1=1';
+
     public function __construct()
     {
         $this->db = DB::getConnection();
@@ -31,5 +33,15 @@ class Model
         $sth = $this->db->prepare($statement);
         $sth->execute($bindings);
         return $sth; 
+    }
+
+    public function get($id) : array
+    {
+        return $this->fetchOne("SELECT * FROM `{$this->table}` WHERE ({$this->key} = ?) AND ({$this->defaultWhere})",[$id]);
+    }
+
+    public function getWhere($where = '1=1') : array
+    {
+        return $this->fetchArray("SELECT * FROM `{$this->table}` WHERE ($where) AND ({$this->defaultWhere})");
     }
 }
