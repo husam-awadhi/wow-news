@@ -4,11 +4,9 @@ namespace App\Controller;
 
 use App\Config;
 use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 use Twig\Environment;
-use App\Model\Model;
 use Exception;
-use Symfony\Bridge\Twig\Extension\AssetExtension;
-use Symfony\Component\Asset\Package;
 
 abstract class AbstractController
 {
@@ -28,11 +26,11 @@ abstract class AbstractController
         $twig = new Environment($loader, [
             'cache' => CACHE,
             'debug' => Config::getValue('debug'),
-            'url_base_path' => ROOT.'/assets',
         ]);
-        $twig->addExtension(new \Twig\Extension\DebugExtension());
         $twig->addGlobal('home', basename(ROOT));
-        $twig->addGlobal('assets', basename(ROOT).'/assets');
+        $twig->addGlobal('global_assets', basename(ROOT).'/assets');
+
+        if(Config::getValue('debug')) $twig->addExtension(new DebugExtension());
 
         return $twig;
     }

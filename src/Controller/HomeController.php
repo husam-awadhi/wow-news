@@ -7,7 +7,7 @@ use App\Model\Home;
 
 
 class HomeController extends AbstractController
-{    
+{
     protected $model;
     protected string $template = 'home/home.twig';
 
@@ -19,6 +19,9 @@ class HomeController extends AbstractController
 
     public function indexAction($id = "", $idparent = "", $event = "")
     {
-        $this->render($this->model->getWhere());
+
+        $greeting = (date('H') >= 0 && date('H') < 12 ? 'Morning' : 'Evening');
+
+        $this->render(['posts' => $this->model->getWhere(), 'greeting' => "Good {$greeting}!"]);
     }
 }
